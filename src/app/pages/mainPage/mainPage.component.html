@@ -1,0 +1,27 @@
+<div class="contenedor">
+  <h1>Buscador peliculas</h1>
+  <div class="form" >
+    <input [formControl]="searchInput" [ngClass]="{'clase-error': messageError, 'clase-sin-error': !messageError}" (keyup.enter)="buscar()" type="text" name="search" id="search" placeholder="Avengers,Star Wars,..." >
+    <button (click)="buscar()">Buscar</button>
+    <p *ngIf="messageError" class="error">{{messageError}}</p>
+  </div>
+
+</div>
+
+
+<ul class="movies" *ngIf="movies;else sinResultados">
+  <li class="movie" *ngFor="let movie of movies">
+    <app-card [movie]="movie"></app-card>
+  </li>
+
+
+
+  </ul>
+
+
+  <ng-template #sinResultados>
+    <h2>No se han encontrado resultados</h2>
+  </ng-template>
+
+
+

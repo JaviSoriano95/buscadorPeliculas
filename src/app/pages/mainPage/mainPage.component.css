@@ -1,0 +1,34 @@
+.form{
+display: flex;
+justify-content: center;
+}
+
+.contendor{
+  width: 100%;
+
+}
+
+h1{
+  text-align: center;
+}
+
+.movies{
+  list-style:none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  width: 100%;
+  gap: 32px;
+}
+
+.movie{
+  text-align: center;
+}
+
+
+.clase-error {
+  border: 1px solid red;
+}
+
+.clase-sin-error {
+  border: 1px solid transparent;
+}
