@@ -13,7 +13,7 @@ export class SearchService {
 
   getFilms(param: string): Observable<Movie> {
     return  this.http
-      .get<Movie>(`http://www.omdbapi.com/?apikey=307bcc1&s=${param}`)
+      .get<Movie>(`https://www.omdbapi.com/?apikey=307bcc1&s=${param}`)
 
   }
 }
