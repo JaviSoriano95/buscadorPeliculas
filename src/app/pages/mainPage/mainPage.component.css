@@ -1,29 +1,71 @@
-.form{
-display: flex;
-justify-content: center;
-}
-
-.contendor{
+.form {
+  display: flex;
+  justify-content: center;
   width: 100%;
-
+  align-items: center;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  gap: 10px; /* Space between items */
+  padding: 10px; /* Padding around the form */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
-h1{
+/* Styles for the input field */
+.form input[type="text"] {
+  flex: 1; /* Allow the input field to grow and fill available space */
+  min-width: 200px; /* Minimum width for the input field */
+  padding: 10px; /* Padding inside the input field */
+  font-size: 1em; /* Font size relative to the default size */
+  border: 1px solid #ccc; /* Border for the input field */
+  border-radius: 4px; /* Rounded corners */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+/* Styles for the button */
+.form button {
+  padding: 10px 20px; /* Padding inside the button */
+  font-size: 1em; /* Font size relative to the default size */
+  border: none; /* Remove default border */
+  border-radius: 4px; /* Rounded corners */
+  background-color: #007bff; /* Background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Cursor changes to pointer on hover */
+}
+
+/* Adjust button width for smaller screens */
+.form button {
+  flex-shrink: 0; /* Prevent the button from shrinking */
+}
+
+.ordenar{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+}
+
+h1, .error {
   text-align: center;
+  margin: auto;
+  padding: auto;
 }
 
-.movies{
-  list-style:none;
+.error {
+  color: red;
+}
+
+.movies {
+  list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   width: 100%;
   gap: 32px;
+  padding: 0 16px; /* Agrega padding a los lados para margen */
+  box-sizing: border-box; /* Asegura que el padding se incluya en el tamaño total del elemento */
 }
 
-.movie{
+.movie {
   text-align: center;
 }
-
 
 .clase-error {
   border: 1px solid red;
@@ -32,3 +74,4 @@ h1{
 .clase-sin-error {
   border: 1px solid transparent;
 }
+

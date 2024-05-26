@@ -1,11 +1,15 @@
 <div class="contenedor">
   <h1>Buscador peliculas</h1>
-  <div class="form" >
-    <input [formControl]="searchInput" [ngClass]="{'clase-error': messageError, 'clase-sin-error': !messageError}" (keyup.enter)="buscar()" type="text" name="search" id="search" placeholder="Avengers,Star Wars,..." >
+  <div class="form">
+    <input [formControl]="searchInput" [ngClass]="{'clase-error': messageError, 'clase-sin-error': !messageError}"
+      (keyup)="buscar()" type="text" name="search" id="search" placeholder="Avengers,Star Wars,...">
     <button (click)="buscar()">Buscar</button>
-    <p *ngIf="messageError" class="error">{{messageError}}</p>
   </div>
-
+  <p *ngIf="messageError" class="error">{{messageError}}</p>
+<div class="ordenar">
+  <input type="checkbox" name="orden" id="orden" #check (click)="ordenar(check)" [formControl]="checkInput">
+  <p>Ordernar</p>
+</div>
 </div>
 
 
@@ -13,15 +17,9 @@
   <li class="movie" *ngFor="let movie of movies">
     <app-card [movie]="movie"></app-card>
   </li>
+</ul>
 
 
-
-  </ul>
-
-
-  <ng-template #sinResultados>
-    <h2>No se han encontrado resultados</h2>
-  </ng-template>
-
-
-
+<ng-template #sinResultados>
+  <h2>No se han encontrado resultados</h2>
+</ng-template>
